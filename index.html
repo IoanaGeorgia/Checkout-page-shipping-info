@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,
+  maximum-scale=5" />
+
+  <link rel="icon" href="devchallenges.png" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://devchallenges.io/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+
+  <title>Devchallenges-Checkout Page</title>
+
+  <style>
+    body {
+      margin-top: 4rem;
+      margin-left: 15rem;
+      margin-right: 15rem;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .devInfo {
+      text-align: center;
+      padding-top: 12rem;
+      color: #BDBDBD;
+      font-size: 0.875rem;
+    }
+    .title {
+      color: #4E5150;
+      font-size: 2.25rem;
+    }
+
+    .inputWrapper>p {
+      color: #4F4F4F;
+      font-size: 0.75rem;
+    }
+
+    .inputWrapper {
+      margin-top: 1rem;
+    }
+
+    .formSectionTitle {
+      color: #333;
+      font-size: 1.125rem;
+    }
+
+    .inputInnerWrapper {
+      border-radius: 0.75rem;
+      border: 1px solid #828282;
+      display: flex;
+      align-items: center;
+      padding: 0.75rem;
+    }
+
+    .inputIcon {
+      margin-right: 0.75rem;
+      color: #828282;
+    }
+
+    .inputInnerWrapper input {
+      outline: none;
+      border: none;
+    }
+
+    .inputInnerWrapper input::placeholder {
+      color: #828282;
+      font-size: 1rem;
+
+    }
+
+    .inputInnerWrapper input {
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .shippingFlexed {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .shippingFlexed>div {
+      width: 13.5625rem;
+    }
+
+    .shippingFlexed>div input {
+      width: 100%;
+    }
+
+    .shippingSaveInfo {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .shippingSaveInfo span {
+      color: #4F4F4F;
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+
+    }
+
+    .shippingSaveInfo input {
+      border-radius: 0.25rem;
+      border: 1px solid #828282;
+      width: 1.3125rem;
+      height: 1.3125rem;
+    }
+
+    .continueButtonWrapper {
+      text-align: right;
+    }
+
+    .continueButtonWrapper button {
+      border-radius: 0.75rem;
+      background: #F2994A;
+      padding: 1.06rem 2.81rem;
+      border: none;
+      cursor: pointer;
+      color: #FFF;
+      font-size: 1rem;
+    }
+
+    .wrapper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .shippingInformation {
+      margin-top: 3.63rem;
+    }
+
+    .productWrapper {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      width: 28.63rem;
+    }
+
+    .productInnerWrapper {
+      width: 23.9375rem;
+      height: 33.4375rem;
+      border-radius: 0.75rem;
+      background: #F2F2F2;
+      padding-left: 1.81rem;
+      padding-right: 1.81rem;
+      padding-bottom: 1.09rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 2rem;
+    }
+
+    .formWrapper {
+      width: 29.0625rem;
+    }
+
+    .product img {
+      width: 8.98144rem;
+      height: 8.49463rem;
+      transform: rotate(-0.02deg);
+      border-radius: 12px;
+    }
+
+    .product {
+      display: flex;
+      margin-top: 2.09rem;
+    }
+
+    .productInfo {
+      margin-left: 1rem;
+    }
+
+    .productInfo p:nth-of-type(1) {
+      color: #4E5150;
+      font-size: 1rem;
+
+    }
+
+    .priceInfo span:nth-of-type(1) {
+      color: #F2994A;
+      font-size: 1rem;
+      margin: 0px;
+
+    }
+
+    .priceInfo span {
+      color: #4E5150;
+      font-size: 0.75rem;
+      text-decoration-line: strikethrough;
+      margin-left: 0.5rem;
+    }
+
+    .productNumber {
+      width: 8.39088rem;
+      height: 3.25rem;
+      border-radius: 0.75rem;
+      border: 1px solid #828282;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .productInfo button {
+      color: #828282;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .productGeneralInfo {
+      border-top: 1px solid #BDBDBD;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.125rem;
+      padding: 0.5rem;
+
+    }
+
+    @media (max-width:900px) {
+      html {
+        font-size: 80%;
+      }
+
+      body {
+        margin-right: 0.75rem;
+        margin-left: 0.75rem;
+        margin-top: 0.75rem;
+      }
+
+      .wrapper {
+        flex-direction: column-reverse;
+      }
+
+      .formWrapper,
+      .productWrapper {
+        width: 100%;
+      }
+
+      .productInnerWrapper {
+        width: 100%;
+
+      }
+
+      .formWrapper {
+        margin-top: 3rem;
+      }
+    }
+  </style>
+</head>
+
+
+
+<body>
+
+  <div class="mainWrapper">
+    <p class="title">Checkout</p>
+    <div class="wrapper">
+      <div class="formWrapper">
+        <div class="contactInformation">
+          <p class="formSectionTitle">Contact Information</p>
+
+          <div class="inputWrapper">
+            <p>E-mail</p>
+            <div class="inputInnerWrapper">
+              <span class="material-icons inputIcon">
+                email
+              </span>
+              <input placeholder="Enter your email...">
+            </div>
+          </div>
+
+          <div class="inputWrapper">
+            <p>Phone</p>
+            <div class="inputInnerWrapper">
+              <span class="material-icons inputIcon">
+                phone
+              </span>
+              <input placeholder="Enter your phone...">
+            </div>
+          </div>
+        </div>
+        <div class="shippingInformation">
+
+
+          <p class="formSectionTitle">Shipping Information</p>
+
+          <div class="inputWrapper">
+            <p>Full name</p>
+            <div class="inputInnerWrapper">
+              <span class="material-icons inputIcon">
+                account_circle
+              </span>
+              <input placeholder="Your name...">
+            </div>
+          </div>
+
+          <div class="inputWrapper">
+            <p>Address</p>
+            <div class="inputInnerWrapper">
+              <span class="material-icons inputIcon">
+                home
+              </span>
+              <input placeholder="Your address...">
+            </div>
+          </div>
+
+          <div class="inputWrapper">
+            <p>City</p>
+            <div class="inputInnerWrapper">
+              <span class="material-icons inputIcon">
+                location_city
+              </span>
+              <input placeholder="Your city...">
+            </div>
+          </div>
+
+
+          <div class="shippingFlexed">
+            <div class="inputWrapper">
+              <p>Country</p>
+              <div class="inputInnerWrapper">
+                <span class="material-icons inputIcon">
+                  public
+                </span>
+                <input placeholder="Your country...">
+              </div>
+            </div>
+
+            <div class="inputWrapper">
+              <p>Postal code</p>
+              <div class="inputInnerWrapper">
+                <span class="material-icons inputIcon">
+                  markunread_mailbox
+                </span>
+                <input placeholder="Your postal code...">
+              </div>
+            </div>
+          </div>
+          <div class="shippingSaveInfo">
+            <input type="checkbox"><span>Save this information for next time</span>
+          </div>
+          <p class="continueButtonWrapper">
+            <button>Continue</button>
+          </p>
+        </div>
+      </div>
+
+      <div class="productWrapper">
+        <div class="productInnerWrapper">
+          <div>
+            <div class="product">
+              <img src="photo1.png">
+              <div class="productInfo">
+                <p>Vintage Backpack</p>
+                <p class="priceInfo">
+                  <span>$54.99</span>
+                  <span>$94.99</span>
+                </p>
+                <div class="productNumber">
+                  <button>-</button>
+                  <div>1</div>
+                  <button>+</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="product">
+              <img src="photo2.png">
+              <div class="productInfo">
+                <p>Levi Shoes</p>
+                <p class="priceInfo">
+                  <span>$74.99</span>
+                  <span>$124.99</span>
+                </p>
+                <div class="productNumber">
+                  <button>-</button>
+                  <div>1</div>
+                  <button>+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="productGeneralInfo">
+              <div>Shipping</div>
+              <div>$19</div>
+            </div>
+            <div class="productGeneralInfo">
+              <div>Total</div>
+              <div>$149.98</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="devInfo">Created by Pascu Ioana - devChallenges.io</p>
+</body>
+
+</html>
